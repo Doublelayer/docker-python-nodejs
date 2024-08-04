@@ -27,9 +27,3 @@ RUN NODE_VERSION="$(curl -fsSL https://nodejs.org/dist/latest/SHASUMS256.txt | h
   && rm "node-$NODE_VERSION-linux-$ARCH.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 RUN corepack enable yarn
-RUN \
-  apt-get update && \
-  apt-get upgrade -yqq && \
-  pip install -U pip pipenv uv && \
-  curl -sSL https://install.python-poetry.org | python - && \
-  rm -rf /var/lib/apt/lists/*
