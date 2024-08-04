@@ -10,6 +10,7 @@ RUN NODE_VERSION="$(curl -fsSL https://nodejs.org/dist/latest/SHASUMS256.txt | h
   && case "${dpkgArch##*-}" in \
     amd64) ARCH='x64';; \
     arm64) ARCH='arm64';; \
+    armhf) ARCH='linux64';; \
     *) echo "unsupported architecture"; exit 1 ;; \
   esac \
   && for key in $(curl -sL https://raw.githubusercontent.com/nodejs/docker-node/HEAD/keys/node.keys); do \
